@@ -18,6 +18,12 @@ The original hypothesis was that a self-contained representation might:
 
 These were hypotheses to test, not established benefits. In particular, theoretical compression and QR capacity calculations do not establish that publishers experience a material operational problem.
 
+## Origin and inspiration
+
+The URLC idea was prompted by [ha.mr](https://ha.mr), an open-source static URL compressor and QR optimiser created by [p2r3](https://github.com/p2r3/ha.mr). Its documentation and implementation demonstrate URL-aware structural encoding in a working browser application: common URL components are bit-packed, common domains and top-level domains use Huffman-coded dictionaries, remaining segments use selected character sets or Huffman coding, and QR output uses the QR Alphanumeric character set to reduce encoding overhead.
+
+ha.mr performs compression and decompression in the browser without a backend mapping database. Its normal browser links nevertheless use the `ha.mr` origin to deliver the JavaScript decoder—through a fragment for text links or a path for QR links—although the project also includes a standalone decoder. It is therefore important practical prior art and the historical inspiration for this investigation, but it is not evidence that URL payload density creates a sufficiently significant operational problem to pass Gate 1.
+
 ## Validation framework
 
 Research was organised as sequential kill gates:
@@ -67,6 +73,7 @@ The correct decision was therefore **Insufficient evidence**, not Yes and not a 
 
 URLC cannot be evaluated as though compact or structured URI representations were new.
 
+- **ha.mr:** a working client-side URL compressor and QR optimiser using structural encoding, Huffman-coded dictionaries, and QR-specific output. It directly informed the URLC hypothesis. See the [live application](https://ha.mr) and [source repository](https://github.com/p2r3/ha.mr).
 - **Constrained Resource Identifiers (CRI):** the IETF work represents URI components in CBOR and substantially overlaps any proposed structural binary URI representation. See the [IETF datatracker record](https://datatracker.ietf.org/doc/draft-ietf-core-href/) and [RFC Editor queue](https://queue.rfc-editor.org/).
 - **GS1 Digital Link:** GS1 defines URI syntax, resolver behaviour, and lossless compression mechanisms for structured identifiers used in data carriers. See the [GS1 Digital Link standard](https://ref.gs1.org/standards/digital-link/) and [resolver standard](https://ref.gs1.org/standards/resolver/).
 - Other relevant baselines include direct URLs with optimal QR segmentation, organisation-owned HTTPS short paths, persistent identifier systems, URI Templates, CBOR, standard compression formats, and QR-safe encodings.
