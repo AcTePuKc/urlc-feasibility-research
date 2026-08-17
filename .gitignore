@@ -1,0 +1,28 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local research working material
+tmp/
+temp/
+scratch/
+private/
+*.local
+*.bak
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+
+# Generated outputs
+dist/
+build/
+coverage/
+*.log
+

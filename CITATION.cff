@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this feasibility research, please cite this repository."
+title: "URLC Feasibility Research"
+type: dataset
+authors:
+  - family-names: "Nikolaev"
+    given-names: "Shteryan"
+abstract: >-
+  An archival feasibility investigation into a proposed lossless, locally
+  decodable representation of HTTP(S) URLs for QR use. Research was suspended
+  at Gate 1 because available evidence did not establish a sufficiently
+  significant unmet need. No codec, URI scheme, or proof of concept was built.
+keywords:
+  - QR code
+  - URL
+  - URI
+  - feasibility research
+  - technology assessment
+  - negative results
+license: CC-BY-4.0
+version: 0.1.0
